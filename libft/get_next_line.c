@@ -6,11 +6,11 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 13:41:02 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/05 14:58:17 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:37:34 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 char	*free_stbuff(char *stbuff)
 {

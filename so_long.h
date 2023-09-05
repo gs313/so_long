@@ -6,14 +6,14 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 00:33:52 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/05 13:37:53 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:23:00 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "get_next_line/get_next_line.h"
+# include "libft/libft.h"
 # include "mlx/mlx.h"
 # include <fcntl.h>
 # include <stdio.h>
@@ -46,4 +46,5 @@ typedef struct s_info
 
 int	ft_lenline(int fd);
 int	ft_numline(int fd, int mwidth);
+void	ft_sizeanderror(t_info *game, char **argv);
 #endif

@@ -6,9 +6,11 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 12:37:58 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/05 12:46:08 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:23:46 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../so_long.h"
 
 int	ft_lenline(int fd)
 {
