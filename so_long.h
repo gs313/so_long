@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 00:33:52 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/05 12:47:15 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/05 13:37:53 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,5 @@ typedef struct s_info
 }			t_info;
 
 int	ft_lenline(int fd);
+int	ft_numline(int fd, int mwidth);
 #endif

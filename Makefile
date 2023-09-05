@@ -1,9 +1,9 @@
 ์์ืNAME = so_long
 INCLUDES = -I/opt/X11/include -Imlx
 SOURCES =	so_long.c \
-			test1.c \ #need to be deleted
 			ft_sizeanderror.c\
 			ft_lenline.c \
+			ft_numline.c
 
 CFLAGS = -Wall -Wextra -Werror -g
 
