@@ -6,13 +6,13 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 18:37:13 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/05 20:46:18 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/05 22:12:10 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	ft_setplayerimg(t_info *game)
+static void	ft_setplayerimg(t_info *game)
 /*counter and collected is not yet set no floor and wall yet*/
 {
 	char	*path;

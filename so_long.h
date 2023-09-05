@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 00:33:52 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/05 20:45:00 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/05 22:38:24 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,24 @@ typedef struct s_map
 	int		width;
 	int		height;
 	char	**map;
+	int		coin;
+	int		exit;
 }			t_map;
 
 typedef struct s_info
 {
 	void	*mlx;
-	void	*win;
-	t_img	img;
-	t_map	map;
+	void	*widw;
+	int		coin;
+	int		check_p;
+	int		collect;
+	t_img	*img;
+	t_map	*map;
 }			t_info;
 
-int	ft_lenline(int fd);
-int	ft_numline(int fd, int mwidth);
+int		ft_lenline(int fd);
+int		ft_numline(int fd, int mwidth);
 void	ft_sizeanderror(t_info *game, char **argv);
+void	ft_getmap(t_info *game, int argc, char **argv);
+void	ft_render(t_info *game);
 #endif
