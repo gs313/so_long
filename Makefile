@@ -6,7 +6,7 @@
 #    By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/05 15:18:47 by scharuka          #+#    #+#              #
-#    Updated: 2023/09/05 15:39:17 by scharuka         ###   ########.fr        #
+#    Updated: 2023/09/05 16:26:52 by scharuka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ all: $(NAME)
 	@$(CC) $(CFLAGGS) -Imlx -c -o $@ $<
 
 $(NAME): $(OBJ)
-	@make -C mlx/
+	@make -C mlx/ all
 	@make -C libft/
 	$(CC) $(CFLAGS) $(MLX_FLAG) $(OBJ) $(MLX_LIB) $(LIBFT_LIB) -o $(NAME)
 
@@ -46,6 +46,7 @@ norm:
 	norminette -R checkdefine src/solong.h
 clean:
 	@make clean -C mlx/
+	@make clean -C libft/
 	@rm -f $(OBJ)
 
 fclean: clean

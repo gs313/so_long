@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 11:09:51 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/05 13:06:08 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/05 16:40:13 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ void	ft_sizeanderror(t_info *game, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	game->map.width = ft_lenline(fd);
-	game->map.height = ft_lenline(fd);
+	game->map.height = ft_numline(fd,game->map.width);
 }

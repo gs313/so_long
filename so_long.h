@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 00:33:52 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/05 15:23:00 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/05 20:45:00 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_img
 	void	*player_down;
 	void	*player_left;
 	void	*player_right;
-	void	*wall;
+	void	*grass;
 }			t_img;
 
 typedef struct s_map
