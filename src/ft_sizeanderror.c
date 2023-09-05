@@ -12,20 +12,20 @@
 
 #include "../so_long.h"
 
-void ft_sizeanderror(t_info *game, char **argv)
+void	ft_sizeanderror(t_info *game, char **argv)
 {
-    int fd;
-    fd = open(argv[1], O_RDONLY);
-    if (fd == -1)
-    {
-        perror("Error\n");
-        exit(EXIT_FAILURE);
-    }
-    if(ft_strnstr(argv[1], ".ber", ft_strlen(argv[1])) == NULL)
-    {
-        perror("Error\n");
-        exit(EXIT_FAILURE);
-    } 
-    game->map.width = 0; //need a function here
-    game->map.height = 0; //need a function here                          
+	int fd;
+	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
+	{
+		perror("Error\n");
+		exit(EXIT_FAILURE);
+	}
+	if (ft_strnstr(argv[1], ".ber", ft_strlen(argv[1])) == NULL)
+	{
+		perror("Error\n");
+		exit(EXIT_FAILURE);
+	}
+	game->map.width = 0;  //need a function here
+	game->map.height = 0; //need a function here
 }
