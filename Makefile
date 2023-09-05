@@ -1,10 +1,14 @@
 ์์ืNAME = so_long
 INCLUDES = -I/opt/X11/include -Imlx
-SOURCES = test1.c
-CFLAGS = -Wall -Wextra -Werror -g 
+SOURCES =	so_long.c \
+			test1.c \ #need to be deleted
+			ft_sizeanderror.c\
+			ft_lenline.c \
+
+CFLAGS = -Wall -Wextra -Werror -g
 
 CC = gcc
- 
+
 MLX_FLAG = -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 OBJ	:= $(SOURCES:.c=.o)
