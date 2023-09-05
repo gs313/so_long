@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 00:33:52 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/03 11:07:29 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/05 12:25:38 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include <mlx.h>
-# include <mlx_int.h>
+# include "mlx/mlx.h"
+# include "get_next_line/get_next_line.h"
 
 typedef struct s_img
 {
