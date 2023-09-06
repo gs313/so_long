@@ -6,31 +6,33 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 12:44:30 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/06 16:12:08 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/06 21:17:55 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	ft_checkwin(t_info *game)
+static void	ft_checkwin(t_info *game)
 {
 	if (game->collected == game->map->coin)
 	{
-		ft_putstr_fd("You won with");
-		ft_putnbr_fd(game->move);
-		ft_putstr_fd("\n");
+		ft_printf("You won with %d move\n", game->move);
 		exit(EXIT_SUCCESS);
 	}
 }
 
-int		ft_key_hook(int key, t_info *game)
+int	ft_key_hook(int key, t_info *game)
 {
 	if (key == ESC)
 		ft_exit(game);
 	else if (key == A)
+		ft_move(game, (game->px - BL_SIZE), game->py, 'L');
 	else if (key == S)
+		ft_move(game, game->px, (game->py + BL_SIZE), 'L');
 	else if (key == W)
+		ft_move(game, (game->px + BL_SIZE), game->py, 'L');
 	else if (key == D)
+		ft_move(game, game->px, (game->py - BL_SIZE), 'L');
 	if (game->map->map[px][py] == 'E')
 		ft_checkwin(game);
 	return (0);

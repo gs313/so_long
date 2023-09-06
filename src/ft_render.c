@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:35:36 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/06 13:31:07 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/06 21:18:38 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	ft_put(t_info *game, char tile, int x, int y)
 void	ft_exit(t_info *game)
 {
 	mlx_destroy_window(game->mlx, game->widw)
-	ft_putstr_fd("Bye ~ ! \n");
+	ft_putstr_fd("Bye ~ ! \n", 1);
 	exit(EXIT_SUCCESS);
 }
 

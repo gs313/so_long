@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 09:51:38 by sicharuk          #+#    #+#             */
-/*   Updated: 2023/09/05 15:35:25 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/06 21:16:41 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "get_next_line.h"
+# include "ft_printf.h"
 
 typedef struct s_list
 {
