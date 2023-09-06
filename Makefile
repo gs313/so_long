@@ -6,7 +6,7 @@
 #    By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/05 15:18:47 by scharuka          #+#    #+#              #
-#    Updated: 2023/09/06 22:09:25 by scharuka         ###   ########.fr        #
+#    Updated: 2023/09/06 22:58:43 by scharuka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = so_long
 
 INCLUDES = -I/opt/X11/include -Imlx
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall
+#CFLAGS = -Wall -Wextra -Werror -g
 
 CC = gcc
 

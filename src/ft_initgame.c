@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 18:37:13 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/06 21:32:57 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/07 02:07:28 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ static	void	ft_setimg2(t_info *game)
 	int		iwidth;
 	int		iheight;
 
-	path = "../game_img/TexturedGrass.xmp";
+	path = "game_img/TexturedGrass.xpm";
 	game->img->grass = mlx_xpm_file_to_image(
 			game->mlx, path, &iwidth, &iheight);
-	path = "../game_img/Wall.xmp";
+	path = "game_img/Wall.xpm";
 	game->img->wall = mlx_xpm_file_to_image(
 			game->mlx, path, &iwidth, &iheight);
-	path = "../game_img/coin.xmp";
+	path = "game_img/coin.xpm";
 	game->img->coin = mlx_xpm_file_to_image(
 			game->mlx, path, &iwidth, &iheight);
-	path = "../game_img/exit.xmp";
+	path = "game_img/exit.xpm";
 	game->img->exit = mlx_xpm_file_to_image(
 			game->mlx, path, &iwidth, &iheight);
 }
@@ -38,16 +38,16 @@ static void	ft_setimg(t_info *game)
 	int		iwidth;
 	int		iheight;
 
-	path = "../game_img/front_stand.xmp";
+	path = "game_img/front_stand.xpm";
 	game->img->player_down = mlx_xpm_file_to_image(
 			game->mlx, path, &iwidth, &iheight);
-	path = "../game_img/Back_stand.xmp";
+	path = "game_img/Back_stand.xpm";
 	game->img->player_up = mlx_xpm_file_to_image(
 			game->mlx, path, &iwidth, &iheight);
-	path = "../game_img/Left1.xmp";
+	path = "game_img/Right1.xpm";
 	game->img->player_right = mlx_xpm_file_to_image(
 			game->mlx, path, &iwidth, &iheight);
-	path = "../game_img/Left2.xmp";
+	path = "game_img/Left1.xpm";
 	game->img->player_left = mlx_xpm_file_to_image(
 			game->mlx, path, &iwidth, &iheight);
 	ft_setimg2(game);

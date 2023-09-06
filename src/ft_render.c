@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:35:36 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/06 22:39:20 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/07 02:00:10 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,9 @@ void	ft_render(t_info *game)
 		while (x < game->width)
 		{
 			ft_put(game, game->map->map[x][y], x, y);
+			x++;
 		}
+		y++;
 	}
 	mlx_hook(game->widw, 17, 1L << 2, ft_exit, game);
 	mlx_key_hook(game->widw, ft_key_hook, game);

@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 21:00:54 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/06 22:39:20 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/06 23:14:37 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,9 @@ static void	ft_check_map(t_info *game)
 	y = 0;
 	while (y < (game->height))
 	{
-		if ((int)ft_strlen(game->map->map[y]) != game->width)
+		if (ft_strlen(game->map->map[y]) != (size_t)game->width)
 		{
+			printf("%d %d",ft_strlen(game->map->map[y]),(size_t)game->width);
 			perror("Error: map boarder has to be even\n");
 			exit(EXIT_FAILURE);
 		}
@@ -93,14 +94,18 @@ void	ft_getmap(t_info *game, int argc, char **argv)
 	ch[1] = '\0';
 	fd = open(argv[1], O_RDONLY);
 	reading = read(fd, ch, 1);
-	while (reading)
+	game->map->map[i] = "";
+	while (reading == 1)
 	{
 		if (ch[0] != '\n' && ch[0] != '\0')
 			game->map->map[i] = ft_strjoin(game->map->map[i], ch);
 		else
+		{
 			i++;
+			game->map->map[i] = "";
+		}
 		reading = read(fd, ch, 1);
 	}
 	ft_check_map(game);
-	ft_check_content(game);
+	//ft_check_content(game);
 }
