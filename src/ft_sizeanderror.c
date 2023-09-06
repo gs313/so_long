@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 11:09:51 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/05 22:27:11 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/06 22:38:54 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_sizeanderror(t_info *game, char **argv)
 	int	fd;
 
 	fd = open(argv[1], O_RDONLY);
-	if (fd == -1)
+	if (fd < 0)
 	{
 		perror("Error\n");
 		exit(EXIT_FAILURE);
@@ -27,6 +27,7 @@ void	ft_sizeanderror(t_info *game, char **argv)
 		perror("Error\n");
 		exit(EXIT_FAILURE);
 	}
-	game->map->width = ft_lenline(fd);
-	game->map->height = ft_numline(fd, game->map->width);
+	fd = ft_lenline(fd);
+	game->width = ft_lenline(fd);
+	game->height = ft_numline(fd, game->width);
 }

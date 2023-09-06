@@ -6,7 +6,7 @@
 #    By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/05 15:18:47 by scharuka          #+#    #+#              #
-#    Updated: 2023/09/06 21:51:42 by scharuka         ###   ########.fr        #
+#    Updated: 2023/09/06 22:09:25 by scharuka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,23 +32,22 @@ SOURCES = \
 		src/ft_initgame.c \
 		src/ft_getmap.c \
 		src/ft_key_hook.c \
-		src/ft_move \
+		src/ft_move.c \
 		src/ft_putbg.c \
 		src/ft_render.c \
 
 
 OBJ	:= $(SOURCES:.c=.o)
 
-all: lib $(NAME)
+all: lib ${NAME}
 
 lib:
 	@echo "hello lib"
 	@make -C mlx/
 	@make -C libft/
 
-$(NAME): $(OBJ)
-	echo "hello gcc"
-	#$(CC) $(CFLAGS) $(MLX_FLAG) $(OBJ) $(MLX_LIB) $(LIBFT_LIB) -o $(NAME)
+${NAME}: ${OBJ}
+	$(CC) $(CFLAGS) $(MLX_FLAG) $(OBJ) $(MLX_LIB) $(LIBFT_LIB) -o $(NAME)
 
 norm:
 	norminette -R checkforbiddensourceheader $(SOURCES)

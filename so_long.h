@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 00:33:52 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/06 21:24:44 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/06 22:39:27 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ typedef struct s_img
 
 typedef struct s_map
 {
-	int		width;
-	int		height;
 	char	**map;
 	int		coin;
 	int		exit;
@@ -61,6 +59,8 @@ typedef struct s_info
 	int		move;
 	int		px;
 	int		py;
+	int		width;
+	int		height;
 	t_img	*img;
 	t_map	*map;
 }			t_info;
@@ -72,6 +72,7 @@ void	ft_initgame(t_info *game);
 void	ft_getmap(t_info *game, int argc, char **argv);
 void	ft_render(t_info *game);
 void	ft_putbg(t_info *game);
-void	ft_exit(t_info *game);
+int		ft_exit(t_info *game);
 void	ft_move(t_info *game, int nx, int ny, char d);
+int		ft_key_hook(int key, t_info *game);
 #endif

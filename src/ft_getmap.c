@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 21:00:54 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/06 21:33:20 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/06 22:39:20 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static void	ft_check_tile(char a, int x, int y, t_info *game)
 	int	h;
 	int	w;
 
-	h = game->map->height;
-	w = game->map->width;
+	h = game->height;
+	w = game->width;
 	if (a != '0' && a != '1' && a != 'C' && a != 'P' && a != 'E')
 	{
 		perror("Error: some tiles in this map is invalid\n");
@@ -59,15 +59,15 @@ static void	ft_check_map(t_info *game)
 	game->check_p = 0;
 	game->map->exit = 0;
 	y = 0;
-	while (y < (game->map->height))
+	while (y < (game->height))
 	{
-		if ((int)ft_strlen(game->map->map[y]) != game->map->width)
+		if ((int)ft_strlen(game->map->map[y]) != game->width)
 		{
 			perror("Error: map boarder has to be even\n");
 			exit(EXIT_FAILURE);
 		}
 		x = 0;
-		while (x < game->map->width)
+		while (x < game->width)
 		{
 			ft_check_tile(game->map->map[y][x], x, y, game);
 			x++;

@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:40:50 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/06 21:24:23 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/06 22:39:20 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	ft_putbg(t_info *game)
 	int	j;
 
 	i = 0;
-	while (i < game->map->height)
+	while (i < game->height)
 	{
 		j = 0;
-		while (j < game->map->widgth)
+		while (j < game->width)
 		{
 			mlx_put_image_to_window (game->mlx, game->widw,
 				game->img->grass, (j * BL_SIZE), (i * BL_SIZE));

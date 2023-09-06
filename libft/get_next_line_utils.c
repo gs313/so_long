@@ -6,26 +6,11 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 15:12:35 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/05 15:36:49 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/06 22:10:56 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	while (i < n)
-	{
-		((char *)dst)[i] = ((char *)src)[i];
-		i++;
-	}
-	return (dst);
-}
 
 char	*ft_strjoin_f(char *s1, char *s2)
 {

@@ -6,25 +6,42 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 00:31:15 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/06 21:20:16 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/06 22:55:58 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+static void	ft_check_map_malloc(t_info game)
+{
+	if (!game.map)
+	{
+		perror("Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
+}
+
+static void	ft_check_mapar_malloc(t_info game)
+{
+	if (!game.map->map)
+	{
+		perror("Error: calloc failed\n");
+		exit(EXIT_FAILURE);
+	}
+}
 
 int	main(int argc, char **argv)
 {
 	t_info	game;
 
 	ft_sizeanderror(&game, argv);
-	game.map->map = ft_calloc(game.map->height + 1, sizeof(char *));
-	if (!game.map->map)
-	{
-		perror("Error: calloc failed\n");
-		exit(EXIT_FAILURE);
-	}
+	game.map = malloc(sizeof(t_map));
+	ft_check_map_malloc(game);
+	game.map->map = ft_calloc(game.height + 1, sizeof(char *));
+	ft_check_mapar_malloc(game);
 	ft_initgame(&game);
 	ft_getmap(&game, argc, argv);
+	//return(argc + ft_strlen(argv[0]));
 	game.mlx = mlx_init();
 	if (!game.mlx)
 	{
@@ -32,7 +49,7 @@ int	main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	game.widw = mlx_new_window(game.mlx,
-			game.map->width, game.map->height, "./so_long");
+			game.width, game.height, "./so_long");
 	ft_putbg(&game);
 	ft_render(&game);
 	mlx_loop(game.mlx);
