@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 00:33:52 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/05 22:38:24 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/06 13:29:42 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,17 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+# define BL_SIZE 32
+# define ESC 53
+# define W 13
+# define A 0
+# define S 1
+# define D 2
+# define UP -1
+# define DOWN 1
+# define LEFT -1
+# define RIGHT 1
+
 typedef struct s_img
 {
 	void	*player_up;
@@ -27,6 +38,9 @@ typedef struct s_img
 	void	*player_left;
 	void	*player_right;
 	void	*grass;
+	void	*wall;
+	void	*coin;
+	void	*exit;
 }			t_img;
 
 typedef struct s_map
@@ -42,9 +56,11 @@ typedef struct s_info
 {
 	void	*mlx;
 	void	*widw;
-	int		coin;
 	int		check_p;
-	int		collect;
+	int		collected;
+	int		move;
+	int		px;
+	int		py;
 	t_img	*img;
 	t_map	*map;
 }			t_info;
@@ -54,4 +70,5 @@ int		ft_numline(int fd, int mwidth);
 void	ft_sizeanderror(t_info *game, char **argv);
 void	ft_getmap(t_info *game, int argc, char **argv);
 void	ft_render(t_info *game);
+void	ft_exit(t_info *game);
 #endif

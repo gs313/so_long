@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 00:31:15 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/06 00:21:57 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/06 11:40:36 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	main(int argc, char **argv)
 	}
 	game.widw = mlx_new_window(game.mlx,
 			game.map->width, game.map->height, "./so_long");
+	ft_putbg(&game);
 	ft_render(&game);
 	mlx_loop(game.mlx);
 	perror("Error:loop failed\n");
