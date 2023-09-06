@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 12:52:28 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/05 15:26:19 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/06 21:32:28 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	ft_numline(int fd, int mwidth)
 	line = get_next_line(fd);
 	while (line)
 	{
-		if (ft_strlen(line) < mwidth
-			|| (ft_strlen(line) == 1 && *line !='\n'))
+		if ((int)ft_strlen(line) < mwidth
+			|| (ft_strlen(line) == 1 && *line != '\n'))
 		{
 			free(line);
 			perror("map is stange!\n");

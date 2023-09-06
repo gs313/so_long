@@ -6,17 +6,13 @@
 #    By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/05 15:18:47 by scharuka          #+#    #+#              #
-#    Updated: 2023/09/05 16:26:52 by scharuka         ###   ########.fr        #
+#    Updated: 2023/09/06 21:51:42 by scharuka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
+
 INCLUDES = -I/opt/X11/include -Imlx
-SOURCES =	\
-			src/so_long.c \
-			src/ft_sizeanderror.c\
-			src/ft_lenline.c \
-			src/ft_numline.c \
 
 CFLAGS = -Wall -Wextra -Werror -g
 
@@ -28,18 +24,31 @@ MLX_LIB = mlx/libmlx.a
 
 LIBFT_LIB = libft/libft.a
 
+SOURCES = \
+		src/so_long.c \
+		src/ft_sizeanderror.c\
+		src/ft_lenline.c \
+		src/ft_numline.c \
+		src/ft_initgame.c \
+		src/ft_getmap.c \
+		src/ft_key_hook.c \
+		src/ft_move \
+		src/ft_putbg.c \
+		src/ft_render.c \
+
+
 OBJ	:= $(SOURCES:.c=.o)
 
-all: $(NAME)
+all: lib $(NAME)
 
-
-%.o : %.c
-	@$(CC) $(CFLAGGS) -Imlx -c -o $@ $<
+lib:
+	@echo "hello lib"
+	@make -C mlx/
+	@make -C libft/
 
 $(NAME): $(OBJ)
-	@make -C mlx/ all
-	@make -C libft/
-	$(CC) $(CFLAGS) $(MLX_FLAG) $(OBJ) $(MLX_LIB) $(LIBFT_LIB) -o $(NAME)
+	echo "hello gcc"
+	#$(CC) $(CFLAGS) $(MLX_FLAG) $(OBJ) $(MLX_LIB) $(LIBFT_LIB) -o $(NAME)
 
 norm:
 	norminette -R checkforbiddensourceheader $(SOURCES)

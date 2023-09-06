@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 15:43:13 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/06 21:01:50 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/06 21:27:59 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,20 +34,20 @@ static void	ft_check_collect(t_info *game, int nx, int ny)
 void	ft_move(t_info *game, int nx, int ny, char d)
 {
 	mlx_put_image_to_window(game->mlx, game->widw,
-		game->img->grass, (game->px * BL_SIZE), (game->py * BL_SISE));
+		game->img->grass, (game->px * BL_SIZE), (game->py * BL_SIZE));
 	ft_check_collect(game, nx, ny);
 	if (d == 'U')
 		mlx_put_image_to_window(game->mlx, game->widw,
-			game->img->player_up, (game->px * BL_SIZE), (game->py * BL_SISE));
+			game->img->player_up, (game->px * BL_SIZE), (game->py * BL_SIZE));
 	else if (d == 'D')
 		mlx_put_image_to_window(game->mlx, game->widw,
-			game->img->player_down, (game->px * BL_SIZE), (game->py * BL_SISE));
+			game->img->player_down, (game->px * BL_SIZE), (game->py * BL_SIZE));
 	else if (d == 'L')
 		mlx_put_image_to_window(game->mlx, game->widw,
-			game->img->player_left, (game->px * BL_SIZE), (game->py * BL_SISE));
+			game->img->player_left, (game->px * BL_SIZE), (game->py * BL_SIZE));
 	else if (d == 'R')
 		mlx_put_image_to_window(game->mlx, game->widw, game->img->player_right,
-			(game->px * BL_SIZE), (game->py * BL_SISE));
+			(game->px * BL_SIZE), (game->py * BL_SIZE));
 	mlx_do_sync(game->mlx);
 	ft_printf("Move count:%d\n", game->move);
 }

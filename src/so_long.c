@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 00:31:15 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/06 11:40:36 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/06 21:20:16 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 
 	ft_sizeanderror(&game, argv);
 	game.map->map = ft_calloc(game.map->height + 1, sizeof(char *));
-	if (!map->map)
+	if (!game.map->map)
 	{
 		perror("Error: calloc failed\n");
 		exit(EXIT_FAILURE);

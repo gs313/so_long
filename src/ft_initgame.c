@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 18:37:13 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/06 13:25:55 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/06 21:32:57 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,9 @@ static void	ft_setimg(t_info *game)
 
 void	ft_initgame(t_info *game)
 {
-	char	*path;
-	int		iwidth;
-	int		iheight;
 	t_img	*img;
 
-	img = malloc(size_t(t_img));
+	img = malloc(sizeof(t_img));
 	if (!img)
 	{
 		perror("Error: mallloc failed");

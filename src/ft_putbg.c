@@ -6,13 +6,13 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:40:50 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/06 11:47:53 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/06 21:24:23 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	putbg(t_info game)
+void	ft_putbg(t_info *game)
 {
 	int	i;
 	int	j;
