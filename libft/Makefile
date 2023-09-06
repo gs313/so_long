@@ -6,7 +6,7 @@
 #    By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/31 21:47:41 by scharuka          #+#    #+#              #
-#    Updated: 2023/09/05 15:00:31 by scharuka         ###   ########.fr        #
+#    Updated: 2023/09/06 20:50:31 by scharuka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,14 @@ SRCS =  ft_isdigit.c\
 		 ft_lstdelone.c\
 		 get_next_line.c\
 		 get_next_line_utils.c\
-		
+		 ft_pfptr.c\
+		ft_pfputchar.c\
+		ft_pfputstr.c\
+		ft_printf.c\
+		ft_pfptr.c\
+		ft_pfputnbr.c\
+		ft_pfstrlen.c\
+
 
 OBJS := $(SRCS:.c=.o)
 
