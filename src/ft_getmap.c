@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 21:00:54 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/07 19:41:25 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/07 22:46:07 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ static void	ft_check_tile(char a, int x, int y, t_info *game)
 	if (a == 'C')
 		game->map.coin++;
 	else if (a == 'P')
+	{
 		game->check_p++;
+		game->px = x;
+		game->py = y;
+	}
 	else if (a == 'E')
 		game->map.exit++;
 }
@@ -41,12 +45,15 @@ static void	ft_check_content(t_info *game)
 {
 	if (game->check_p != 1)
 		perror("Error:this can only be single player game\n");
-	else if (game->map.exit == 0)
-		perror("Error: there are no exit in this file\n");
+	else if (game->map.exit != 1)
+		perror("Error: there should be one and only exit in this file\n");
 	else if (game->map.coin == 0)
 		perror("Error: ther are not collectable on the map\n");
 	else
+	{
+		ft_check_map_utils(game);
 		return ;
+	}
 	exit(EXIT_FAILURE);
 }
 

@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 15:44:53 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/07 15:46:41 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/07 21:08:37 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_error(void)
 {
-	perror("Error\n");
+	perror("Error from ft_error\n");
 	exit(EXIT_FAILURE);
 }

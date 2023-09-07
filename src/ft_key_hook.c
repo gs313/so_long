@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 12:44:30 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/07 19:41:25 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/07 23:31:11 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,15 @@
 
 void	ft_freegame(t_info *game)
 {
+	int	i;
+
+	i = 0;
+	while (i < game->height)
+	{
+		free(game->map.map[i]);
+		i++;
+	}
 	free(game->map.map);
-	//free(game->map);
 	mlx_destroy_image(game->mlx, game->img.coin);
 	mlx_destroy_image(game->mlx, game->img.wall);
 	mlx_destroy_image(game->mlx, game->img.exit);
@@ -23,8 +30,7 @@ void	ft_freegame(t_info *game)
 	mlx_destroy_image(game->mlx, game->img.player_left);
 	mlx_destroy_image(game->mlx, game->img.player_right);
 	mlx_destroy_image(game->mlx, game->img.player_up);
-	// free(game_>img);
-	mlx_destroy_window(game->mlx,game->widw);
+	mlx_destroy_window(game->mlx, game->widw);
 }
 
 static void	ft_checkwin(t_info *game)

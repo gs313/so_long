@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 00:33:52 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/07 19:39:51 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/07 21:37:57 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ void	ft_move(t_info *game, int nx, int ny, char d);
 int		ft_key_hook(int key, t_info *game);
 void	ft_freegame(t_info *game);
 void	ft_error(void);
+void	ft_check_map_utils(t_info *game);
 
 #endif

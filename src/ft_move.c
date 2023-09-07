@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 15:43:13 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/07 19:41:25 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/07 22:34:19 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ void	ft_move(t_info *game, int nx, int ny, char d)
 			(game->px * BL_SIZE), (game->py * BL_SIZE));
 	mlx_do_sync(game->mlx);
 	game->move++;
-	ft_printf("Move count:%d coin collected = %d/%d\n ", game->move, game->collected, game->map.coin);
+	ft_printf("Move count:%d coin collected = %d/%d\n ",
+		game->move, game->collected, game->map.coin);
 }
