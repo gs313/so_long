@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -20,21 +20,21 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst || !f)
 		return (NULL);
-	ans = ft_lstnew(f(lst -> content));
+	ans = ft_lstnew(f(lst->content));
 	if (!ans)
 		return (NULL);
 	anext = ans;
-	next = lst -> next;
+	next = lst->next;
 	while (next != NULL)
 	{
-		anext -> next = ft_lstnew(f(next -> content));
+		anext->next = ft_lstnew(f(next->content));
 		if (!anext)
 		{
 			ft_lstclear(&ans, del);
 			return (NULL);
 		}
-		next = next -> next;
-		anext = anext -> next;
+		next = next->next;
+		anext = anext->next;
 	}
 	return (ans);
 }

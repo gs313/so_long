@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
@@ -21,7 +21,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	node = lst;
 	while (node != NULL)
 	{
-		(f)(node -> content);
-		node = node -> next;
+		(f)(node->content);
+		node = node->next;
 	}
 }

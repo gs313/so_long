@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 static size_t	word_length(char const *s, char c)
 {
@@ -19,8 +19,8 @@ static size_t	word_length(char const *s, char c)
 	l = 0;
 	while (*s && *s != c)
 	{
-			s++;
-			l++;
+		s++;
+		l++;
 	}
 	return (l);
 }
@@ -63,7 +63,7 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	wc = word_count(s, c);
-	ans = malloc (sizeof(char *) * (wc + 1));
+	ans = malloc(sizeof(char *) * (wc + 1));
 	if (!ans)
 		return (NULL);
 	ac = 0;

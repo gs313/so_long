@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {
@@ -19,9 +19,9 @@ t_list	*ft_lstlast(t_list *lst)
 	if (lst == NULL)
 		return (NULL);
 	node = lst;
-	while (node -> next != NULL)
+	while (node->next != NULL)
 	{
-		node = node -> next;
+		node = node->next;
 	}
 	return (node);
 }

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 static size_t	check_set(char const *set, char const c)
 {
@@ -21,7 +21,7 @@ static size_t	check_set(char const *set, char const c)
 	{
 		if (c == set[i])
 			return (1);
-	i++;
+		i++;
 	}
 	return (0);
 }
@@ -32,7 +32,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	b;
 	size_t	e;
 
-	if (! s1 || ! set)
+	if (!s1 || !set)
 		return (NULL);
 	b = 0;
 	e = ft_strlen(s1) - 1;

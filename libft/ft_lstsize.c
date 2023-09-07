@@ -21,7 +21,7 @@ int	ft_lstsize(t_list *lst)
 	node = lst;
 	while (node != NULL)
 	{
-		node = node -> next;
+		node = node->next;
 		size++;
 	}
 	return (size);
