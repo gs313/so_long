@@ -6,7 +6,7 @@
 #    By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/05 15:18:47 by scharuka          #+#    #+#              #
-#    Updated: 2023/09/06 22:58:43 by scharuka         ###   ########.fr        #
+#    Updated: 2023/09/07 17:37:09 by scharuka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,7 @@ NAME = so_long
 
 INCLUDES = -I/opt/X11/include -Imlx
 
-CFLAGS = -Wall
-#CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 
 CC = gcc
 
@@ -36,6 +35,7 @@ SOURCES = \
 		src/ft_move.c \
 		src/ft_putbg.c \
 		src/ft_render.c \
+		src/ft_error.c
 
 
 OBJ	:= $(SOURCES:.c=.o)
@@ -43,7 +43,6 @@ OBJ	:= $(SOURCES:.c=.o)
 all: lib ${NAME}
 
 lib:
-	@echo "hello lib"
 	@make -C mlx/
 	@make -C libft/
 

@@ -6,7 +6,7 @@
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 11:09:51 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/06 23:18:35 by scharuka         ###   ########.fr       */
+/*   Updated: 2023/09/07 16:55:30 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,15 @@ void	ft_sizeanderror(t_info *game, char **argv)
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 	{
-		perror("Error\n");
+		perror("Error: open failed\n");
 		exit(EXIT_FAILURE);
 	}
 	if (ft_strnstr(argv[1], ".ber", ft_strlen(argv[1])) == NULL)
 	{
-		perror("Error\n");
+		perror("Error: map need to be .ber\n");
 		exit(EXIT_FAILURE);
 	}
+
 	game->width = ft_lenline(fd);
 	game->height = ft_numline(fd, game->width);
 }

@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numline.c                                       :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scharuka <scharuka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 12:52:28 by scharuka          #+#    #+#             */
-/*   Updated: 2023/09/07 16:44:31 by scharuka         ###   ########.fr       */
+/*   Created: 2023/09/07 15:44:53 by scharuka          #+#    #+#             */
+/*   Updated: 2023/09/07 15:46:41 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	ft_numline(int fd, int mwidth)
+void	ft_error(void)
 {
-	int		num;
-	char	*line;
-
-	num = 1;
-	line = get_next_line(fd);
-	while (line)
-	{
-		if ((int)ft_strlen(line) < mwidth
-			|| (ft_strlen(line) == 1 && *line != '\n'))
-		{
-			free(line);
-			perror("map is stange!\n");
-			exit(EXIT_FAILURE);
-		}
-		free(line);
-		num++;
-		line = get_next_line(fd);
-	}
-	free(line);
-	return (num);
+	perror("Error\n");
+	exit(EXIT_FAILURE);
 }
